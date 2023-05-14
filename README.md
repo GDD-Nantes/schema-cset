@@ -14,7 +14,7 @@ Research work of Master 1 ALMA (Software Architectures)
 
 ## Acknowledgements
 
- - SKAF-MOLL Hala
+ - SKAF-MOLLI Hala
  - MOLLI Pascal
  - GAIGNARD Alban
  - DANG Minh-Hoang
