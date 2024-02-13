@@ -1,0 +1,21 @@
+hadoop fs -ls s3a://ter-2024/ddomain-240209/hashdom6-20/ | awk '
+    BEGIN { total=0 }
+    {
+        size=$5
+        if (index(size, "K") != 0) { 
+            sub("K", "", size); 
+            total += size * 1024; 
+        } else if (index(size, "M") != 0) { 
+            sub("M", "", size); 
+            total += size * 1024 * 1024; 
+        } else if (index(size, "G") != 0) { 
+            sub("G", "", size); 
+            total += size * 1024 * 1024 * 1024; 
+        } else if (index(size, "T") != 0) { 
+            sub("T", "", size); 
+            total += size * 1024 * 1024 * 1024 * 1024; 
+        } else { 
+            total += size; 
+        }
+    }
+    END { print "Total size in megabytes: " total / (1024 * 1024) }'
