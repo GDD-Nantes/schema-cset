@@ -13,8 +13,8 @@ spark = SparkSession.builder.master("spark://172.20.53.96:7077").appName("WDC-st
         
 #fichiers de config qui permettent de se connecter au serveur de stockage s3 qui contient les fichiers de DataCommons
 endpoint_url = 'https://s3.os-bird.glicid.fr/'
-aws_access_key_id = 'bbd95ea3c1174caa88345404b84e458f'
-aws_secret_access_key = 'eaf2a72ecf9845f583af7f3513c44f25'
+aws_access_key_id = '***REMOVED***'
+aws_secret_access_key = '***REMOVED***'
 hadoopConf = spark._jsc.hadoopConfiguration()
 hadoopConf.set('fs.s3a.access.key', aws_access_key_id)
 hadoopConf.set('fs.s3a.secret.key', aws_secret_access_key)
